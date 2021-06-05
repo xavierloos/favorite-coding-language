@@ -3,4 +3,4 @@ build a web or command line application,which should allow users to enter an arb
 
 This can be computed by using the Github API to fetch all of theuser's public Github repos, each of which includes the name ofthe dominant language for the repository.
 
-## Documentation
+## Documentation API
