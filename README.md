@@ -17,3 +17,5 @@ Documentation   for   the   Github   API   can   be   found   at ` https://devel
 ## Mockups
 
 ## Screenshots
+
+## How to run the project
