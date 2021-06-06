@@ -5,7 +5,7 @@ function Search() {
   const [result, setResult] = useState("")
 
   useEffect(() => {
-    fetch("https://api.github.com/users/AArnott/repos")
+    fetch("https://api.github.com/users/xavierloos/repos")
       .then(res => res.json())
       .then(data => {
         const languages = data.map(language => (
@@ -21,7 +21,6 @@ function Search() {
 
   const favLanguage = lang =>{
     var countLang = {}, counter = 0, favorite = [];
-
     lang.forEach(item => {
       (!countLang[item]) ? countLang[item] = 1 :  countLang[item]++; 
       if (countLang[item] > counter) {
@@ -31,8 +30,11 @@ function Search() {
         favorite.push(item);
       }
     });
-
     setData(favorite)
+  }
+
+  const handleSearch = e => {
+    setSearchInput(e.target.value)
   }
 
   return (
