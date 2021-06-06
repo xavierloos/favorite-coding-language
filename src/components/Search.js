@@ -3,6 +3,7 @@ import {Form} from 'semantic-ui-react'
 
 function Search() {
   const [result, setResult] = useState("")
+  const [searchInput, setSearchInput] = useState("")
 
   useEffect(() => {
     fetch("https://api.github.com/users/xavierloos/repos")
@@ -37,11 +38,22 @@ function Search() {
     setSearchInput(e.target.value)
   }
 
+  const handleSubmit = () => {
+    fetch(`https://api.github.com/users/${searchInput}/repos`)
+      .then(res => res.json())
+      .then(data => {
+        const languages = data.map(language => (
+          language.language
+        ))
+        favLanguage(languages)
+      });
+  }
+
   return (
     <div>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Form.Group>
-          <Form.Input placeholder="Search for a github username" name="username" />
+          <Form.Input placeholder="Search for a github username" name="username" onChange={handleSearch}/>
           <Form.Button content="Search" />
         </Form.Group>
       </Form>
