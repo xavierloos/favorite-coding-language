@@ -16,6 +16,8 @@ Documentation   for   the   Github   API   can   be   found   at ` https://devel
 
 ## Mockups
 
+<img src="public/img/Search.png" alt="Search wireframe" width="45%"> <img src="public/img/Result.png" alt="Result wireframe" width="45%">
+
 ## Screenshots
 
 ## How to run the project
