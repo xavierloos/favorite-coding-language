@@ -2,9 +2,9 @@ import './App.css';
 
 function App() {
   return (
-    <div>
-      Delete default files
-    </div>
+    <h1>
+      Search for a Github username
+    </h1>
   );
 }
 
