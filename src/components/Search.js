@@ -1,7 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Form} from 'semantic-ui-react'
 
 function Search() {
+  useEffect(() => {
+    fetch("https://api.github.com/users/example")
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+      });
+  }, [])
   return (
     <div>
       <Form>
