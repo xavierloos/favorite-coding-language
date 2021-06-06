@@ -1,18 +1,23 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Form} from 'semantic-ui-react'
 
 function Search() {
+  const [result, setResult] = useState("")
 
   useEffect(() => {
     fetch("https://api.github.com/users/xavierloos/repos")
       .then(res => res.json())
       .then(data => {
-        const result = data.map(language => (
+        const languages = data.map(language => (
           language.language
         ))
-        console.log(result)
+        setData(languages)
       });
   }, [])
+
+  const setData = result => {
+    setResult(result)
+  }
 
   return (
     <div>
@@ -22,6 +27,9 @@ function Search() {
           <Form.Button content="Search" />
         </Form.Group>
       </Form>
+      <div>
+        {result}
+      </div>
     </div>
   );
 }
