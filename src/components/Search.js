@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {Form} from 'semantic-ui-react'
+import React, { useEffect, useState } from 'react';
+import { Form } from 'semantic-ui-react'
 
 function Search() {
   const [result, setResult] = useState("")
@@ -20,10 +20,10 @@ function Search() {
     setResult(result)
   }
 
-  const favLanguage = lang =>{
+  const favLanguage = lang => {
     var countLang = {}, counter = 0, favorite = [];
     lang.forEach(item => {
-      (!countLang[item]) ? countLang[item] = 1 :  countLang[item]++; 
+      (!countLang[item]) ? countLang[item] = 1 : countLang[item]++;
       if (countLang[item] > counter) {
         counter = countLang[item];
         favorite = [item];
@@ -53,7 +53,7 @@ function Search() {
     <div>
       <Form onSubmit={handleSubmit}>
         <Form.Group>
-          <Form.Input placeholder="Search for a github username" name="username" onChange={handleSearch}/>
+          <Form.Input placeholder="Search for a github username" name="username" onChange={handleSearch} />
           <Form.Button content="Search" />
         </Form.Group>
       </Form>
