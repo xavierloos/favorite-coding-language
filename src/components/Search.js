@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Form } from 'semantic-ui-react'
+import '../App.css';
 
 function Search() {
   const [result, setResult] = useState("")
@@ -50,17 +51,33 @@ function Search() {
   }
 
   return (
-    <div>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group>
-          <Form.Input placeholder="Search for a github username" name="username" onChange={handleSearch} />
-          <Form.Button content="Search" />
-        </Form.Group>
-      </Form>
-      <div>
-        {result}
+    <div className="search-container">
+      <div className="container-fluid search ">
+        <div className="container ">
+          <div className="row row-header ">
+            <div className="col-12 col-sm-12 mx-auto align-content-center ">
+              <Form onSubmit={handleSubmit}>
+                <Form.Group>
+                  <Form.Input placeholder="Search for a github username" name="username" onChange={handleSearch} />
+                  <Form.Button content="Search" />
+                </Form.Group>
+              </Form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="container ">
+        <div className="row row-header">
+          <div className="col-12 col-sm-12 mx-auto align-content-center">
+            <div>
+              {result}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
+
   );
 }
 
