@@ -11,8 +11,16 @@ Documentation   for   the   Github   API   can   be   found   at ` https://devel
 
 - React.js
 - API
+- Bootstrap
 
 ## Process
+
+- Create wireframes of the application
+- Create the project
+- Connect to the GitHub API
+- Create a form with a search button
+- Display the new information to the user
+- Create desing of the app with css/bootstrap
 
 ## Mockups
 
