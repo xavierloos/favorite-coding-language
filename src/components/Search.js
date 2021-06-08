@@ -3,6 +3,7 @@ import { Form } from 'semantic-ui-react'
 import '../App.css';
 import Card from 'react-bootstrap/Card'
 import { FaMapMarkerAlt, FaLink } from "react-icons/fa";
+import { Button } from 'reactstrap';
 
 function Search() {
   const [result, setResult] = useState("")
@@ -103,19 +104,21 @@ function Search() {
               <Card.Body>
                 <Card.Title className="d-flex justify-content-center">{name}</Card.Title>
                 <Card.Text>
-                  <div>
-                    @{username}'s favorite language is {result}!
+                  <div className="info">
+                    @{username}'s favorite language is <span className="lang">{result}</span>!
                   </div>
                   <div className="col-12 col-sm-12 d-flex justify-content-between">
                     <div className="text-muted" >
                       <FaMapMarkerAlt />{location}
                     </div>
-                    <div className="text-muted">
-                      <a href={blog} className="text-muted"><FaLink /> Blog</a>
+                    <div >
+                      <a href={blog} alt="Go to the blog link" className="text-muted"><FaLink /> Blog</a>
                     </div>
                   </div>
                   <div>
-                    {git}
+                    <a href={git} alt="Go to GitHub">
+                      <Button className="github-button">Open on Github</Button>
+                    </a>
                   </div>
                 </Card.Text>
               </Card.Body>
