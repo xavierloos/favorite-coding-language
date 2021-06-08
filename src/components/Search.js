@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Form } from 'semantic-ui-react'
 import '../App.css';
 import Card from 'react-bootstrap/Card'
+import { FaMapMarkerAlt, FaLink } from "react-icons/fa";
 
 function Search() {
   const [result, setResult] = useState("")
@@ -10,7 +11,7 @@ function Search() {
   const [avatar, setAvatar] = useState("")
   const [location, setLocation] = useState("")
   const [blog, setBlog] = useState("")
-  const [github, setGithub] = useState("")
+  const [git, setGit] = useState("")
   const [searchInput, setSearchInput] = useState("")
 
   useEffect(() => {
@@ -29,13 +30,13 @@ function Search() {
       });
   }, [])
 
-  const setUserData = (username, avatar, name, location, blog, github) => {
+  const setUserData = (username, avatar, name, location, blog, git) => {
     setUsername(username)
     setAvatar(avatar)
     setName(name)
     setLocation(location)
     setBlog(blog)
-    setGithub(github)
+    setGit(git)
   }
 
   const setData = result => {
@@ -100,12 +101,22 @@ function Search() {
                 <Card.Img className="avatar" src={avatar} />
               </div>
               <Card.Body>
-                <Card.Title>{username}</Card.Title>
+                <Card.Title className="d-flex justify-content-center">{name}</Card.Title>
                 <Card.Text>
-                  {name} favorite language is {result}!
-                  {location}
-                  {blog}
-                  {github}
+                  <div>
+                    @{username}'s favorite language is {result}!
+                  </div>
+                  <div className="col-12 col-sm-12 d-flex justify-content-between">
+                    <div className="text-muted" >
+                      <FaMapMarkerAlt />{location}
+                    </div>
+                    <div className="text-muted">
+                      <a href={blog} className="text-muted"><FaLink /> Blog</a>
+                    </div>
+                  </div>
+                  <div>
+                    {git}
+                  </div>
                 </Card.Text>
               </Card.Body>
             </Card>
