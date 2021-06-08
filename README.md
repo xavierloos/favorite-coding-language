@@ -20,4 +20,6 @@ Documentation   for   the   Github   API   can   be   found   at ` https://devel
 
 ## Screenshots
 
+<img src="public/img/username-screenshot.png" alt="Screenshot" width="100%">
+
 ## How to run the project
