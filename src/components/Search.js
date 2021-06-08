@@ -6,6 +6,9 @@ import Card from 'react-bootstrap/Card'
 function Search() {
   const [result, setResult] = useState("")
   const [username, setUsername] = useState("")
+  const [name, setName] = useState("")
+  const [avatar, setAvatar] = useState("")
+  const [location, setLocation] = useState("")
   const [searchInput, setSearchInput] = useState("")
 
   useEffect(() => {
@@ -20,12 +23,15 @@ function Search() {
     fetch("https://api.github.com/users/xavierloos")
       .then(res => res.json())
       .then(data => {
-        setUserData(data.login)
+        setUserData(data.login, data.avatar_url, data.name, data.location)
       });
   }, [])
 
-  const setUserData = name => {
-    setUsername(name)
+  const setUserData = (username, avatar, name, location) => {
+    setUsername(username)
+    setAvatar(avatar)
+    setName(name)
+    setLocation(location)
   }
 
   const setData = result => {
@@ -62,7 +68,7 @@ function Search() {
     fetch(`https://api.github.com/users/${searchInput}`)
       .then(res => res.json())
       .then(data => {
-        setUserData(data.login)
+        setUserData(data.login, data.avatar_url, data.name, data.location)
       });
   }
 
@@ -86,11 +92,12 @@ function Search() {
         <div className="row row-header justify-content-center">
           <div className="col-3 col-sm-3">
             <Card style={{ width: '18rem' }}>
-              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Img variant="top" src={avatar} />
               <Card.Body>
                 <Card.Title>{username}</Card.Title>
                 <Card.Text>
-                  {result}
+                  {name} favorite language is {result}!
+                  {location}
                 </Card.Text>
               </Card.Body>
             </Card>
