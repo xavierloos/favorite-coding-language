@@ -2,7 +2,8 @@ import React from 'react';
 import '../App.css';
 import { Button } from 'reactstrap';
 import Card from 'react-bootstrap/Card'
-function Usercard(language) {
+function Usercard(language, name) {
+  console.log(name)
   return (
     <div className="container">
       <div className="row row-header justify-content-center">
@@ -13,6 +14,7 @@ function Usercard(language) {
               <Card.Title>Card Title</Card.Title>
               <Card.Text>
                 {language.language}
+                {name.name}
               </Card.Text>
               <Button variant="primary">Go somewhere</Button>
             </Card.Body>

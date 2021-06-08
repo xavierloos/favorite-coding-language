@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Form } from 'semantic-ui-react'
 import '../App.css';
-import Usercard from './Usercard';
+import Card from 'react-bootstrap/Card'
 
 function Search() {
   const [result, setResult] = useState("")
@@ -12,7 +12,6 @@ function Search() {
     fetch("https://api.github.com/users/xavierloos/repos")
       .then(res => res.json())
       .then(data => {
-        console.log(data)
         const languages = data.map(language => (
           language.language
         ))
@@ -21,12 +20,12 @@ function Search() {
     fetch("https://api.github.com/users/xavierloos")
       .then(res => res.json())
       .then(data => {
-        setUsernameData(data.login)
+        setUserData(data.login)
       });
   }, [])
 
-  const setUsernameData = username => {
-    setUsername(username)
+  const setUserData = name => {
+    setUsername(name)
   }
 
   const setData = result => {
@@ -60,6 +59,11 @@ function Search() {
         ))
         favLanguage(languages)
       });
+    fetch(`https://api.github.com/users/${searchInput}`)
+      .then(res => res.json())
+      .then(data => {
+        setUserData(data.login)
+      });
   }
 
   return (
@@ -78,16 +82,22 @@ function Search() {
           </div>
         </div>
       </div>
-      <div className="container ">
-        <div className="row row-header">
-          <div className="col-12 col-sm-12 mx-auto align-content-center">
-              <Usercard language={result} name={username}/>
+      <div className="container">
+        <div className="row row-header justify-content-center">
+          <div className="col-3 col-sm-3">
+            <Card style={{ width: '18rem' }}>
+              <Card.Img variant="top" src="holder.js/100px180" />
+              <Card.Body>
+                <Card.Title>{username}</Card.Title>
+                <Card.Text>
+                  {result}
+                </Card.Text>
+              </Card.Body>
+            </Card>
           </div>
         </div>
       </div>
     </div>
-
-
   );
 }
 
