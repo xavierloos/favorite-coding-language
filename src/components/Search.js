@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Form } from 'semantic-ui-react'
 import '../App.css';
+import Usercard from './Usercard';
 
 function Search() {
   const [result, setResult] = useState("")
@@ -69,9 +70,7 @@ function Search() {
       <div className="container ">
         <div className="row row-header">
           <div className="col-12 col-sm-12 mx-auto align-content-center">
-            <div>
-              {result}
-            </div>
+              <Usercard language={result}/>
           </div>
         </div>
       </div>
