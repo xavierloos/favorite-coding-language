@@ -93,8 +93,8 @@ function Search() {
         </div>
       </div>
       <div className="container">
-        <div className="row row-header justify-content-center">
-          <div className="col-3 col-sm-3">
+        <div className="row row-header ">
+          <div className="col-12 col-sm-12 d-flex justify-content-center">
             <Card style={{ width: '18rem' }}>
               <Card.Img variant="top" src={avatar} />
               <Card.Body>
