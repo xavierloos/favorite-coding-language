@@ -96,7 +96,9 @@ function Search() {
         <div className="row row-header ">
           <div className="col-12 col-sm-12 d-flex justify-content-center">
             <Card style={{ width: '18rem' }}>
-              <Card.Img variant="top" src={avatar} />
+              <div className="card-header">
+                <Card.Img className="avatar" src={avatar} />
+              </div>
               <Card.Body>
                 <Card.Title>{username}</Card.Title>
                 <Card.Text>
