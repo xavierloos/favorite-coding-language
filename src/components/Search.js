@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Form } from 'semantic-ui-react'
 import '../App.css';
 import Card from 'react-bootstrap/Card'
+import { FaMapMarkerAlt, FaLink } from "react-icons/fa";
+import { Button } from 'reactstrap';
 
 function Search() {
   const [result, setResult] = useState("")
@@ -10,7 +12,7 @@ function Search() {
   const [avatar, setAvatar] = useState("")
   const [location, setLocation] = useState("")
   const [blog, setBlog] = useState("")
-  const [github, setGithub] = useState("")
+  const [git, setGit] = useState("")
   const [searchInput, setSearchInput] = useState("")
 
   useEffect(() => {
@@ -29,13 +31,13 @@ function Search() {
       });
   }, [])
 
-  const setUserData = (username, avatar, name, location, blog, github) => {
+  const setUserData = (username, avatar, name, location, blog, git) => {
     setUsername(username)
     setAvatar(avatar)
     setName(name)
     setLocation(location)
     setBlog(blog)
-    setGithub(github)
+    setGit(git)
   }
 
   const setData = result => {
@@ -93,17 +95,31 @@ function Search() {
         </div>
       </div>
       <div className="container">
-        <div className="row row-header justify-content-center">
-          <div className="col-3 col-sm-3">
+        <div className="row row-header ">
+          <div className="col-12 col-sm-12 d-flex justify-content-center">
             <Card style={{ width: '18rem' }}>
-              <Card.Img variant="top" src={avatar} />
+              <div className="card-header">
+                <Card.Img className="avatar" src={avatar} />
+              </div>
               <Card.Body>
-                <Card.Title>{username}</Card.Title>
+                <Card.Title className="d-flex justify-content-center">{name}</Card.Title>
                 <Card.Text>
-                  {name} favorite language is {result}!
-                  {location}
-                  {blog}
-                  {github}
+                  <div className="info">
+                    @{username}'s favorite language is <span className="lang">{result}</span>!
+                  </div>
+                  <div className="col-12 col-sm-12 d-flex justify-content-between">
+                    <div className="text-muted" >
+                      <FaMapMarkerAlt />{location}
+                    </div>
+                    <div >
+                      <a href={blog} alt="Go to the blog link" className="text-muted"><FaLink /> Blog</a>
+                    </div>
+                  </div>
+                  <div>
+                    <a href={git} alt="Go to GitHub">
+                      <Button className="github-button">Open on Github</Button>
+                    </a>
+                  </div>
                 </Card.Text>
               </Card.Body>
             </Card>
