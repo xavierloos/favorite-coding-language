@@ -23,3 +23,8 @@ Documentation   for   the   Github   API   can   be   found   at ` https://devel
 <img src="public/img/username-screenshot.png" alt="Screenshot" width="100%">
 
 ## How to run the project
+
+- Clone this repository to your local computer
+- From the terminal install all dependencies or run `npm install`
+- Run `npm start`
+- The application should be visible in the `http://localhost:3000`
