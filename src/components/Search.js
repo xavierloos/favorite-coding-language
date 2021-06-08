@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Form } from 'semantic-ui-react'
 import '../App.css';
+import Card from 'react-bootstrap/Card'
 
 function Search() {
   const [result, setResult] = useState("")
+  const [username, setUsername] = useState("")
+  const [name, setName] = useState("")
+  const [avatar, setAvatar] = useState("")
+  const [location, setLocation] = useState("")
+  const [blog, setBlog] = useState("")
+  const [github, setGithub] = useState("")
   const [searchInput, setSearchInput] = useState("")
 
   useEffect(() => {
@@ -15,7 +22,21 @@ function Search() {
         ))
         favLanguage(languages)
       });
+    fetch("https://api.github.com/users/xavierloos")
+      .then(res => res.json())
+      .then(data => {
+        setUserData(data.login, data.avatar_url, data.name, data.location, data.blog, data.html_url)
+      });
   }, [])
+
+  const setUserData = (username, avatar, name, location, blog, github) => {
+    setUsername(username)
+    setAvatar(avatar)
+    setName(name)
+    setLocation(location)
+    setBlog(blog)
+    setGithub(github)
+  }
 
   const setData = result => {
     setResult(result)
@@ -48,6 +69,11 @@ function Search() {
         ))
         favLanguage(languages)
       });
+    fetch(`https://api.github.com/users/${searchInput}`)
+      .then(res => res.json())
+      .then(data => {
+        setUserData(data.login, data.avatar_url, data.name, data.location, data.blog, data.html_url)
+      });
   }
 
   return (
@@ -66,18 +92,25 @@ function Search() {
           </div>
         </div>
       </div>
-      <div className="container ">
-        <div className="row row-header">
-          <div className="col-12 col-sm-12 mx-auto align-content-center">
-            <div>
-              {result}
-            </div>
+      <div className="container">
+        <div className="row row-header justify-content-center">
+          <div className="col-3 col-sm-3">
+            <Card style={{ width: '18rem' }}>
+              <Card.Img variant="top" src={avatar} />
+              <Card.Body>
+                <Card.Title>{username}</Card.Title>
+                <Card.Text>
+                  {name} favorite language is {result}!
+                  {location}
+                  {blog}
+                  {github}
+                </Card.Text>
+              </Card.Body>
+            </Card>
           </div>
         </div>
       </div>
     </div>
-
-
   );
 }
 

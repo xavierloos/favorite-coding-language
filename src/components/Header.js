@@ -11,7 +11,7 @@ function Header() {
           </div>
           <div className="col-9 col-sm-9">
             <h1>Github Username</h1>
-            <p className="slogan">Getting inpiration from github users favorite coding language.</p>
+            <p className="slogan">Getting inspiration from github users favorite coding language.</p>
           </div>
         </div>
       </div>
