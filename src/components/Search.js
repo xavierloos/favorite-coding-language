@@ -5,18 +5,29 @@ import Usercard from './Usercard';
 
 function Search() {
   const [result, setResult] = useState("")
+  const [username, setUsername] = useState("")
   const [searchInput, setSearchInput] = useState("")
 
   useEffect(() => {
     fetch("https://api.github.com/users/xavierloos/repos")
       .then(res => res.json())
       .then(data => {
+        console.log(data)
         const languages = data.map(language => (
           language.language
         ))
         favLanguage(languages)
       });
+    fetch("https://api.github.com/users/xavierloos")
+      .then(res => res.json())
+      .then(data => {
+        setUsernameData(data.login)
+      });
   }, [])
+
+  const setUsernameData = username => {
+    setUsername(username)
+  }
 
   const setData = result => {
     setResult(result)
@@ -70,7 +81,7 @@ function Search() {
       <div className="container ">
         <div className="row row-header">
           <div className="col-12 col-sm-12 mx-auto align-content-center">
-              <Usercard language={result}/>
+              <Usercard language={result} name={username}/>
           </div>
         </div>
       </div>
