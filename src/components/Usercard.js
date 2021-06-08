@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card'
 function Usercard(language) {
   return (
     <div className="container">
-      <div className="row row-header">
+      <div className="row row-header justify-content-center">
         <div className="col-3 col-sm-3">
           <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src="holder.js/100px180" />
