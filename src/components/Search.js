@@ -9,6 +9,8 @@ function Search() {
   const [name, setName] = useState("")
   const [avatar, setAvatar] = useState("")
   const [location, setLocation] = useState("")
+  const [blog, setBlog] = useState("")
+  const [github, setGithub] = useState("")
   const [searchInput, setSearchInput] = useState("")
 
   useEffect(() => {
@@ -23,15 +25,17 @@ function Search() {
     fetch("https://api.github.com/users/xavierloos")
       .then(res => res.json())
       .then(data => {
-        setUserData(data.login, data.avatar_url, data.name, data.location)
+        setUserData(data.login, data.avatar_url, data.name, data.location, data.blog, data.html_url)
       });
   }, [])
 
-  const setUserData = (username, avatar, name, location) => {
+  const setUserData = (username, avatar, name, location, blog, github) => {
     setUsername(username)
     setAvatar(avatar)
     setName(name)
     setLocation(location)
+    setBlog(blog)
+    setGithub(github)
   }
 
   const setData = result => {
@@ -68,7 +72,7 @@ function Search() {
     fetch(`https://api.github.com/users/${searchInput}`)
       .then(res => res.json())
       .then(data => {
-        setUserData(data.login, data.avatar_url, data.name, data.location)
+        setUserData(data.login, data.avatar_url, data.name, data.location, data.blog, data.html_url)
       });
   }
 
@@ -98,6 +102,8 @@ function Search() {
                 <Card.Text>
                   {name} favorite language is {result}!
                   {location}
+                  {blog}
+                  {github}
                 </Card.Text>
               </Card.Body>
             </Card>
