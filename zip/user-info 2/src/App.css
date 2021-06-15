@@ -1,0 +1,104 @@
+.search-container{
+  /* background: #1E2529;
+  background: -webkit-linear-gradient(top, #1E2529, #FFFFFF);
+  background: -moz-linear-gradient(top, #1E2529, #FFFFFF);
+  background: linear-gradient(to bottom, #1E2529, #FFFFFF); */
+
+  background: rgb(255,255,255);
+background: linear-gradient(0deg, rgba(255,255,255,0.6951155462184874) 0%, rgba(30,37,41,1) 100%);
+}
+.jumbotron {
+  padding: 70px 30px 70px 30px;
+  margin: 0px auto;
+  margin-bottom: 0px !important;
+  background-image: url("https://spectrum.imgix.net/communities/8a470c6b-5498-49d5-adfc-41e13453c1a9/e167cda3-2081-40ef-9a54-1147f8a19571-Screenshot%25202018-12-17%2520at%252016.15.39.png?w=1280&h=384&dpr=2&q=100&expires=1623024000000&ixlib=js-1.3.0&s=ff83642be070cde62bb4c120532acd0e");
+  /* background-image: radial-gradient(at 50% 100%, rgba(123, 22, 255, 0.75), rgb(15, 1, 94)); */
+  color: #ffffff;
+  color: floralwhite;
+  border-radius: 0px !important;
+}
+h1{
+  font-weight: bolder !important;
+}
+.slogan{
+  font-size: 16px;
+  font-style: italic;
+  padding-left: 150px;
+  padding-top: 10px;
+}
+.logo{
+  width: 200px;
+  position: absolute;
+}
+.fields{
+  justify-content: center;
+}
+input {
+  min-width: 300px;
+  border: 2px solid white !important;
+  transition: all 0.2s ease-out !important;
+  color: gray !important;
+}
+
+input[type=text]:focus {
+  padding: 10px !important;
+  color: white !important;
+  font-weight: bolder;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-radius: 0px !important;
+  background: transparent !important;
+  letter-spacing: 1.5px;
+  text-shadow: 2px 2px rgb(65, 65, 65);
+  font-size: 18px !important;
+}
+
+.search{
+  background-image: url(https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.sh47.com%2FPublic%2Fimages%2Fcloud_banner%2Fcloud-2.png&f=1&nofb=1);
+  height: 250px;
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: 300px;
+  padding-top: 15px;
+}
+.card{
+  /* background: #1d2628 !important; */
+  border: 1px solid #1e2529 !important;
+  box-shadow: rgba(65, 65, 65, 0.4) 5px 5px, rgba(65, 65, 65, 0.3) 10px 10px, rgba(65, 65, 65, 0.2) 15px 15px, rgba(65, 65, 65, 0.1) 20px 20px, rgba(65, 65, 65, 0.05) 25px 25px;
+  margin-bottom: 5rem;
+}
+.card-header{
+  background-image: url("https://spectrum.imgix.net/communities/8a470c6b-5498-49d5-adfc-41e13453c1a9/e167cda3-2081-40ef-9a54-1147f8a19571-Screenshot%25202018-12-17%2520at%252016.15.39.png?w=1280&h=384&dpr=2&q=100&expires=1623024000000&ixlib=js-1.3.0&s=ff83642be070cde62bb4c120532acd0e");
+  height: 90px;
+  display: flex;
+  justify-content: center;
+}
+.avatar{
+  width: 150px !important;
+  border-radius: 50% !important;
+  height: 150px;
+}
+.card-body{
+  padding-top: 80px !important;
+}
+.card-text>div {
+  margin: 20px auto auto auto;
+}
+.github-button{
+  color: #fff;
+  background-color: #1d2628 !important;
+  border-color: #20272a !important;
+  width: 100%;
+}
+.github-button:hover{
+  color: #1d2628 !important;
+  background-color: white !important;
+}
+.info{
+  text-align: center;
+  margin: auto;
+}
+.lang{
+  font-weight: bolder;
+}

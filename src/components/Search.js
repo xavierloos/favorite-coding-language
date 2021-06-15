@@ -16,26 +16,26 @@ function Search() {
   const [searchInput, setSearchInput] = useState("")
   const [error, setError] = useState("")
 
-  useEffect(() => {
-    fetch("https://api.github.com/users/xavierloos/repos")
-      .then(res => res.json())
-      .then(data => {
-        if (data.message) {
-          setError(data.message)
-        } else {
-          const languages = data.map(language => (
-            language.language
-          ))
-          favLanguage(languages)
-          setError(null)
-        }
-      });
-    fetch("https://api.github.com/users/xavierloos")
-      .then(res => res.json())
-      .then(data => {
-        (data.message) ? setError(data.message) : setUserData(data.login, data.avatar_url, data.name, data.location, data.blog, data.html_url);
-      });
-  }, [])
+  // useEffect(() => {
+  //   fetch("https://api.github.com/users/xavierloos/repos")
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       if (data.message) {
+  //         setError(data.message)
+  //       } else {
+  //         const languages = data.map(language => (
+  //           language.language
+  //         ))
+  //         favLanguage(languages)
+  //         setError(null)
+  //       }
+  //     });
+  //   fetch("https://api.github.com/users/xavierloos")
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       (data.message) ? setError(data.message) : setUserData(data.login, data.avatar_url, data.name, data.location, data.blog, data.html_url);
+  //     });
+  // }, [])
 
   const setUserData = (username, avatar, name, location, blog, git) => {
     setUsername(username)
