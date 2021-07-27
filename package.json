@@ -12,6 +12,9 @@
     "semantic-ui-css": "^2.4.1",
     "web-vitals": "^1.0.1"
   },
+  "engines": {
+    "node": ">=v14.16.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
