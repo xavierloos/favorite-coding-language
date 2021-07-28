@@ -15,7 +15,6 @@ function Search() {
   const [git, setGit] = useState("")
   const [searchInput, setSearchInput] = useState("")
   const [error, setError] = useState("")
-
   useEffect(() => {
     fetch("https://api.github.com/users/xavierloos/repos")
       .then(res => res.json())
